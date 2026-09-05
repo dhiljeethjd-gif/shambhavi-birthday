@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Kuttu ❤️</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+  color:#333;
+  overflow-x:hidden;
+}
+
+section{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:30px 20px;
+  text-align:center;
+}
+
+h1{
+  font-size:3rem;
+  margin-bottom:15px;
+}
+
+h2{
+  font-size:2rem;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:1.15rem;
+  line-height:1.7;
+  max-width:650px;
+}
+
+.hero{
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  color:white;
+}
+
+.heart{
+  font-size:70px;
+  animation:beat 1s infinite;
+}
+
+@keyframes beat{
+  0%,100%{transform:scale(1);}
+  50%{transform:scale(1.2);}
+}
+
+button{
+  margin-top:30px;
+  padding:15px 30px;
+  border:none;
+  border-radius:30px;
+  font-size:17px;
+  background:white;
+  color:#ff4f81;
+  cursor:pointer;
+  box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:25px;
+  max-width:700px;
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.memories{
+  background:#fff5f7;
+}
+
+.photo-box{
+  width:100%;
+  max-width:600px;
+  margin:20px auto;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.photo-box img{
+  width:100%;
+  display:block;
+}
+
+.message{
+  background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
+}
+
+.final{
+  background:#1f1f1f;
+  color:white;
+}
+
+.final p{
+  margin-top:15px;
+}
+
+.small{
+  margin-top:25px;
+  font-size:1rem;
+  opacity:.8;
+}
+
+.confetti{
+  position:fixed;
+  width:10px;
+  height:10px;
+  background:#fff;
+  top:-10px;
+  animation:fall linear infinite;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="heart">❤️</div>
+
+<h1>Happy Birthday Kuttu! 🎂</h1>
+
+<p>
+To the one who is cute, chaotic, dramatic,
+slightly annoying… and somehow impossible not to love.
+</p>
+
+<button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
+Start your surprise ❤️
+</button>
+
+</section>
+
+
+<section id="story">
+
+<div class="card">
+
+<h2>Dear Shambhavi 🤍</h2>
+
+<p>
+Another year older… but unfortunately still the same dramebaaz.
+</p>
+
+<br>
+
+<p>
+You have somehow managed to fill ordinary days with random conversations,
+laughs, drama, food cravings and memories that I didn't even realise
+would become special.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="memories">
+
+<h2>A few memories 📸</h2>
+
+<div class="photo-box">
+<img src="photo1.jpg">
+</div>
+
+<div class="photo-box">
+<img src="photo2.jpg">
+</div>
+
+<div class="photo-box">
+<img src="photo3.jpg">
+</div>
+
+<p>
+Christmas madness, random outings, festivals,
+food dates and all those little moments in between.
+</p>
+
+</section>
+
+
+<section>
+
+<div class="card">
+
+<h2>Things that remind me of you 😂</h2>
+
+<p>
+• Unlimited drama 🎭<br><br>
+• Random food cravings 🍔<br><br>
+• Your weird expressions 📸<br><br>
+• Laughing at absolutely unnecessary things 🤦🏻‍♂️<br><br>
+• Being cute when you don't even try 🤍
+</p>
+
+</div>
+
+</section>
+
+
+<section class="message">
+
+<div class="card">
+
+<h2>A small wish for you 🌸</h2>
+
+<p>
+I hope this year brings you more reasons to smile,
+more adventures, more late-night conversations,
+more good food and chai,
+more bike rides,
+and just enough drama to keep life interesting.
+</p>
+
+<br>
+
+<p>
+May you find happiness in all the places
+your heart quietly wants to go.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="final">
+
+<div class="heart">🎂</div>
+
+<h1>Happy Birthday, Kuttu ❤️</h1>
+
+<p>
+Stay exactly the crazy, funny, dramatic person you are.
+Don't grow up too much.
+The world already has enough serious people.
+</p>
+
+<p class="small">
+With love and unlimited irritation,<br>
+your annoying anna ❤️
+</p>
+
+</section>
+
+
+<script>
+
+function createConfetti(){
+
+for(let i=0;i<40;i++){
+
+let confetti=document.createElement("div");
+
+confetti.className="confetti";
+
+confetti.style.left=Math.random()*100+"vw";
+
+confetti.style.animationDuration=
+(Math.random()*3+3)+"s";
+
+confetti.style.opacity=Math.random();
+
+document.body.appendChild(confetti);
+
+setTimeout(()=>{
+confetti.remove();
+},6000);
+
+}
+
+}
+
+createConfetti();
+
+setInterval(createConfetti,7000);
+
+</script>
+
+</body>
+</html>
