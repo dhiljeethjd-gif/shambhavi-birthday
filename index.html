@@ -4,173 +4,345 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday Kuttu ❤️</title>
+<title>Happy Birthday Kutty ❤️</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   font-family: Arial, sans-serif;
-  background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-  color:#333;
-  overflow-x:hidden;
+  background: linear-gradient(135deg, #fff5f5, #fde2e7);
+  color: #333;
+  overflow-x: hidden;
 }
 
-section{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  padding:30px 20px;
-  text-align:center;
+/* Opening Screen */
+
+#opening {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-h1{
-  font-size:3rem;
-  margin-bottom:15px;
+.opening-content {
+  padding: 30px;
 }
 
-h2{
-  font-size:2rem;
-  margin-bottom:20px;
+.opening-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-p{
-  font-size:1.15rem;
-  line-height:1.7;
-  max-width:650px;
+.opening-content p {
+  font-size: 1.3rem;
+  margin-bottom: 35px;
 }
 
-.hero{
-  background:linear-gradient(135deg,#ff758c,#ff7eb3);
-  color:white;
+.open-btn {
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  background: white;
+  color: #e85d75;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
 }
 
-.heart{
-  font-size:70px;
-  animation:beat 1s infinite;
+/* Main */
+
+#main-content {
+  display: none;
 }
 
-@keyframes beat{
-  0%,100%{transform:scale(1);}
-  50%{transform:scale(1.2);}
+.hero {
+  padding: 80px 20px 50px;
+  text-align: center;
 }
 
-button{
-  margin-top:30px;
-  padding:15px 30px;
-  border:none;
-  border-radius:30px;
-  font-size:17px;
-  background:white;
-  color:#ff4f81;
-  cursor:pointer;
-  box-shadow:0 5px 20px rgba(0,0,0,.15);
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #e85d75;
 }
 
-.card{
-  background:white;
-  padding:30px;
-  border-radius:25px;
-  max-width:700px;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.7;
 }
 
-.memories{
-  background:#fff5f7;
+/* Messages */
+
+.message {
+  padding: 70px 25px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.photo-box{
-  width:100%;
-  max-width:600px;
-  margin:20px auto;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 10px 25px rgba(0,0,0,.2);
+.message span {
+  color: #e85d75;
 }
 
-.photo-box img{
-  width:100%;
-  display:block;
+/* Gallery */
+
+.gallery {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  padding-bottom: 50px;
 }
 
-.message{
-  background:linear-gradient(135deg,#fbc2eb,#a6c1ee);
+.gallery img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
 }
 
-.final{
-  background:#1f1f1f;
-  color:white;
+.gallery img:hover {
+  transform: scale(1.04);
 }
 
-.final p{
-  margin-top:15px;
+/* Birthday message */
+
+.birthday-message {
+  background: white;
+  margin: 40px auto;
+  padding: 50px 25px;
+  max-width: 750px;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.small{
-  margin-top:25px;
-  font-size:1rem;
-  opacity:.8;
+.birthday-message h2 {
+  color: #e85d75;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
 }
 
-.confetti{
-  position:fixed;
-  width:10px;
-  height:10px;
-  background:#fff;
-  top:-10px;
-  animation:fall linear infinite;
+.birthday-message p {
+  font-size: 1.15rem;
+  line-height: 1.9;
 }
 
-@keyframes fall{
-  to{
-    transform:translateY(110vh) rotate(720deg);
+/* Surprise */
+
+.surprise {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.surprise button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 40px;
+  background: #e85d75;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#final-surprise {
+  display: none;
+  margin-top: 35px;
+}
+
+#final-surprise img {
+  width: 280px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+#final-surprise p {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .opening-content h1 {
+    font-size: 2.3rem;
   }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery img {
+    height: 200px;
+  }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
-<section class="hero">
+<section id="opening">
 
-<div class="heart">❤️</div>
+<div class="opening-content">
 
-<h1>Happy Birthday Kuttu! 🎂</h1>
+<h1>Hey Kutty ❤️</h1>
 
-<p>
-To the one who is cute, chaotic, dramatic,
-slightly annoying… and somehow impossible not to love.
-</p>
+<p>I made something small for you...</p>
 
-<button onclick="document.getElementById('story').scrollIntoView({behavior:'smooth'})">
-Start your surprise ❤️
+<button class="open-btn" onclick="openSurprise()">
+Open your surprise 🎁
 </button>
 
+</div>
+
 </section>
 
 
-<section id="story">
+<div id="main-content">
 
-<div class="card">
+<section class="hero">
 
-<h2>Dear Shambhavi 🤍</h2>
+<h1>Happy Birthday, Shambhavi ❤️</h1>
 
 <p>
-Another year older… but unfortunately still the same dramebaaz.
+A little collection of memories, smiles,
+random moments and everything in between.
 </p>
 
-<br>
+</section>
+
+
+<div class="message">
+More beaches 🌊 <br><br>
+More bike rides 🏍️ <br><br>
+More chai & bun maska ☕ <br><br>
+And unlimited <span>dramebaazi 😂</span>
+</div>
+
+
+<section class="gallery">
+
+<img src="photo-1.jpg">
+<img src="photo-2.jpg">
+<img src="photo-3.jpg">
+<img src="photo-4.jpg">
+<img src="photo-5.jpg">
+<img src="photo-6.jpg">
+
+<img src="photo-7.jpg">
+<img src="photo-8.jpg">
+<img src="photo-9.jpg">
+<img src="photo-10.jpg">
+
+<img src="photo-11.jpg">
+<img src="photo-12.jpg">
+
+<img src="photo-13.jpg">
+<img src="photo-14.jpg">
+
+<img src="photo-15.jpg">
+<img src="photo-16.jpg">
+
+<img src="photo-17.jpg">
+<img src="photo-18.jpg">
+
+<img src="photo-19.jpg">
+
+</section>
+
+
+<section class="birthday-message">
+
+<h2>For the birthday girl ❤️</h2>
 
 <p>
-You have somehow managed to fill ordinary days with random conversations,
-laughs, drama, food cravings and memories that I didn't even realise
-would become special.
+
+Happy Birthday to this beautiful soul 🤍
+
+<br><br>
+
+May life give you everything your heart quietly wishes for.
+
+<br><br>
+
+More smiles, more adventures, more beaches,
+more bike rides, more chai and bun maska,
+and of course...
+
+<br><br>
+
+your usual unlimited dramebaazi 😂❤️
+
+<br><br>
+
+Stay exactly the beautiful, crazy and wonderful
+person you are.
+
+</p>
+
+</section>
+
+
+<section class="surprise">
+
+<button onclick="showFinal()">
+
+One last thing... 👀
+
+</button>
+
+
+<div id="final-surprise">
+
+<img src="photo-20.jpg">
+
+<p>
+
+I'm really glad our paths crossed.
+
+<br><br>
+
+Happy Birthday, Kutty ❤️
+
 </p>
 
 </div>
@@ -178,125 +350,33 @@ would become special.
 </section>
 
 
-<section class="memories">
+<footer>
 
-<h2>A few memories 📸</h2>
+Made with ❤️ just for you
 
-<div class="photo-box">
-<img src="photo1.jpg">
-</div>
-
-<div class="photo-box">
-<img src="photo2.jpg">
-</div>
-
-<div class="photo-box">
-<img src="photo3.jpg">
-</div>
-
-<p>
-Christmas madness, random outings, festivals,
-food dates and all those little moments in between.
-</p>
-
-</section>
-
-
-<section>
-
-<div class="card">
-
-<h2>Things that remind me of you 😂</h2>
-
-<p>
-• Unlimited drama 🎭<br><br>
-• Random food cravings 🍔<br><br>
-• Your weird expressions 📸<br><br>
-• Laughing at absolutely unnecessary things 🤦🏻‍♂️<br><br>
-• Being cute when you don't even try 🤍
-</p>
+</footer>
 
 </div>
-
-</section>
-
-
-<section class="message">
-
-<div class="card">
-
-<h2>A small wish for you 🌸</h2>
-
-<p>
-I hope this year brings you more reasons to smile,
-more adventures, more late-night conversations,
-more good food and chai,
-more bike rides,
-and just enough drama to keep life interesting.
-</p>
-
-<br>
-
-<p>
-May you find happiness in all the places
-your heart quietly wants to go.
-</p>
-
-</div>
-
-</section>
-
-
-<section class="final">
-
-<div class="heart">🎂</div>
-
-<h1>Happy Birthday, Kuttu ❤️</h1>
-
-<p>
-Stay exactly the crazy, funny, dramatic person you are.
-Don't grow up too much.
-The world already has enough serious people.
-</p>
-
-<p class="small">
-With love and unlimited irritation,<br>
-your annoying anna ❤️
-</p>
-
-</section>
 
 
 <script>
 
-function createConfetti(){
+function openSurprise() {
 
-for(let i=0;i<40;i++){
+document.getElementById("opening").style.display = "none";
 
-let confetti=document.createElement("div");
+document.getElementById("main-content").style.display = "block";
 
-confetti.className="confetti";
-
-confetti.style.left=Math.random()*100+"vw";
-
-confetti.style.animationDuration=
-(Math.random()*3+3)+"s";
-
-confetti.style.opacity=Math.random();
-
-document.body.appendChild(confetti);
-
-setTimeout(()=>{
-confetti.remove();
-},6000);
+window.scrollTo(0,0);
 
 }
 
+
+function showFinal() {
+
+document.getElementById("final-surprise").style.display = "block";
+
 }
-
-createConfetti();
-
-setInterval(createConfetti,7000);
 
 </script>
 
